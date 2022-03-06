@@ -51,16 +51,31 @@
 //}
 //
 
-int main() {
-    int i = 1, j = 3, k = 0, sum = 5;
-    switch (k > -i++) {
-    case 2: sum += 1;
-    case 1: sum += j;
-    case 0: sum += i; break;
-    case -1: sum *= -1;
-    }
-    printf("%d %d\n", sum, k);
+//int main() {
+//    int i = 1, j = 3, k = 0, sum = 5;
+//    switch (k > -i++) {
+//    case 2: sum += 1;
+//    case 1: sum += j;
+//    case 0: sum += i; break;
+//    case -1: sum *= -1;
+//    }
+//    printf("%d %d\n", sum, k);
+//
+//    return 0;
+//}
 
-    return 0;
+int main() {
+    int a = 3, ret;
+    printf("%d\n", (a += a -= a * a));
+    int m = 0256, n = 256;
+    printf("%o %#o %#x\n", m, n, n);
+    m = 1, n = 1;
+    if (!(ret = (m-n)))//!(ret = (m-n) <==> ·ÇÁã
+    {
+        printf("%d\n", ret);
+    }
+    //printf("%d\n", (a -= a * a));// a = a - a*a = -6
+    //printf("%d\n", (a += a)); // a = a + a = -12
 }
+
 
