@@ -64,6 +64,23 @@
 //    return 0;
 //}
 
+int l = 10;
+void test()
+{
+    static int c = 0;
+    c++;
+    int l = 12;//一般函数内部会先寻找函数内部定义的变量，如果没有再去寻找外部的全局变量
+    printf("%d %d\n", c, l);
+}
+
+struct MyStruct
+{
+    char t : 4; //1 bit
+    char k : 4; //1 bit
+    unsigned short i : 8;//2 bit
+    unsigned long m;//4 byte
+}str;
+
 int main() {
     int a = 3, ret;
     printf("%d\n", (a += a -= a * a));
@@ -74,8 +91,14 @@ int main() {
     {
         printf("%d\n", ret);
     }
+    test();
+    //printf("%d\n", c);这个c变量在函数中定义，且加上了static也不能在同文件中进行全局引用
     //printf("%d\n", (a -= a * a));// a = a - a*a = -6
     //printf("%d\n", (a += a)); // a = a + a = -12
+
+    printf("struct = %d %d\n",sizeof(str), sizeof(str.m));//8 bit 4 bit
+    printf("value = %4.2f\n", 3.5 * 1 + 2 * 1 + 2);//空4个空格再开始输出数据，小数位输出2位
+
 }
 
 
