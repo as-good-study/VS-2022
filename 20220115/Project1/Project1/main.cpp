@@ -133,6 +133,23 @@ void test(void)
 int main(void)
 {
 	test();
+	char arr[] = "hello";
+	char* arr1 = NULL;
+	//char* arr2 = "hellow"; //这种写法错误
+	cout << "arr[] : " << sizeof(arr) << endl;
+	cout << "arr1 : " << sizeof(arr1) << endl;
+	cout << "short : " << sizeof(short) << endl;
+	cout << "长度=: " << strlen("c:\test\628\test.c") << endl; //这个\t是占用一个字节
+
+	int i = 0;
+	int k = 0;
+	for (i = 0, k = 0; k = 0; i++, k++) //不进入循环，因为循环判断条件就是0
+	{
+		k++;
+		cout << "hehe" << endl;
+	}
+		
+
 	system("pause");
 	return EXIT_SUCCESS;
 }
